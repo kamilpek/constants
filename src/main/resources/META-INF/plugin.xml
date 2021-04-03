@@ -1,0 +1,36 @@
+<idea-plugin>
+    <id>pl.kamilpek.GenerateConstants</id>
+    <name>GenerateConstants</name>
+    <vendor email="kamilpek@gmail.com">Kamil Pek</vendor>
+
+    <description><![CDATA[
+    <p>Plugin for generating constants declaration.</p>
+	<p>To use this tool, mark text and choose generate declarations action.</p>
+	<br>
+	<p>Example:</p>
+    <ul>
+        <li>From: <code>"document.id"</code> OR <code>document.id</code></li>
+        <li>To: <code>public static final String DOCUMENT_ID = "document.id";</code></li>
+    </ul>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="GenerateConstants" text="GenerateConstants">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <action id="GenerateConstants.GenerateDeclarationAction" class="actions.GenerateDeclarationAction"
+                    text="Generate constants declaration" description="From variable value to complete declaration.">
+                <keyboard-shortcut keymap="$default" first-keystroke="control shift alt C" second-keystroke="D" />
+                <keyboard-shortcut keymap="Mac OS X" first-keystroke="control shift alt C" second-keystroke="D" remove="true"/>
+                <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="control shift alt C" second-keystroke="D" replace-all="true"/>
+            </action>
+        </group>
+    </actions>
+</idea-plugin>

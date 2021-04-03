@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.5.1'
+}
+
+group 'pl.kamilpek'
+version '0.0.1'
+
+sourceCompatibility = 1.11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.apache.commons', name: 'commons-text', version: '1.9'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.3.2'
+}
+patchPluginXml {
+    changeNotes """
+     Updated description"""
+}
+test {
+    useJUnitPlatform()
+}
+
+publishPlugin {
+    token = System.getenv("INTELLIJ-TOKEN")
+}
