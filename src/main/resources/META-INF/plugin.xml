@@ -11,6 +11,7 @@
     <ul>
         <li>From: <code>"document.id"</code> OR <code>document.id</code></li>
         <li>To: <code>public static final String DOCUMENT_ID = "document.id";</code></li>
+        <li>Available separators: <code>.</code>, <code>-</code>, <code>_</code>.</li>
     </ul>
     ]]></description>
 

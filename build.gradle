@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'pl.kamilpek'
-version '0.0.1'
+version '1.0.0'
 
 sourceCompatibility = 1.11
 
@@ -20,11 +20,11 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2020.3.2'
+    version 'LATEST-EAP-SNAPSHOT'
 }
 patchPluginXml {
     changeNotes """
-     Updated description"""
+     Added more description and incresed version."""
 }
 test {
     useJUnitPlatform()
