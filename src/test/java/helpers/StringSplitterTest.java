@@ -64,4 +64,22 @@ class StringSplitterTest {
         String[] result = StringSplitter.split("");
         Assertions.assertArrayEquals(new String[]{""}, result);
     }
+
+    @Test
+    void testSplitLines() {
+        String[] result = StringSplitter.splitLines("    one\n" +
+                "    two\n" +
+                "    three\n" +
+                "    four");
+        Assertions.assertArrayEquals(new String[]{"one", "two", "three", "four"}, result);
+    }
+
+    @Test
+    void testSplitLinesTabs() {
+        String[] result = StringSplitter.splitLines("    one\n" +
+                "\ttwo\n" +
+                "\tthree\n" +
+                "\tfour");
+        Assertions.assertArrayEquals(new String[]{"one", "two", "three", "four"}, result);
+    }
 }

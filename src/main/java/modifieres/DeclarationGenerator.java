@@ -12,6 +12,7 @@ public class DeclarationGenerator {
     public void modifyStringCase(Strategy strategy, AnActionEvent event) {
         final Project project = event.getProject();
         final Editor editor = event.getData(CommonDataKeys.EDITOR);
+        if(editor == null) return;
         final Document document = editor.getDocument();
 
         Caret primaryCaret = editor.getCaretModel().getPrimaryCaret();

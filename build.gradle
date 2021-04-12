@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'pl.kamilpek'
-version '1.0.0'
+version '1.1.0'
 
 sourceCompatibility = 1.11
 
@@ -24,7 +24,7 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-     Added more description and incresed version."""
+     Added generationg multilines declarations."""
 }
 test {
     useJUnitPlatform()
